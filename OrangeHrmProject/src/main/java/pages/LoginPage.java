@@ -16,7 +16,7 @@ public class LoginPage {
         username.sendKeys(Info.USER_NAME);
         password.sendKeys(Info.PASSWORD);
         loginButton.click();
-        return PageFactory.initElements(Browser.driver.PIMpage.classe);
+        return PageFactory.initElements(Browser.driver,PIMpage.class);
 
     }
 
