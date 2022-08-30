@@ -16,7 +16,7 @@ public class PIMpage {
     @FindBy(css = "button[type='submit']")private  WebElement submitButton;
     @FindBy(xpath = "//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"]/div[3]/div") private  WebElement firstNameElement;
     @FindBy(xpath = "//div[@class=\"oxd-table-row oxd-table-row--with-border oxd-table-row--clickable\"]/div[4]/div") private  WebElement lastNameElement;
-
+    @FindBy(linkText = "Admin")private WebElement adminLink;
     public RecruitmentPage navigatToRecrutmentLink(){
     recruitmentLink.click();
     return PageFactory.initElements(Browser.driver, RecruitmentPage.class);
@@ -35,7 +35,11 @@ public PIMpage validatFirstNameAndLastName(String firstName,String lastName){
     return this;
 }
 
-
+public AdminPage navigateToAdminPage(){
+        adminLink.click();
+        return PageFactory.initElements(Browser.driver,AdminPage.class );
+        // we are not using return this in this case because we are not staying in the PIMpage
+}
 
 
 
